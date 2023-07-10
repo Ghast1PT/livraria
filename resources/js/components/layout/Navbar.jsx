@@ -5,7 +5,7 @@ import Container from './Container'
 
 function Navbar() {
     return (
-        <nav className={styles.navbar + ' bg-primary text-third font-bold'}>
+        <nav className={styles.navbar + ' bg-primary text-secundary font-bold'}>
             <Container>
                 <Link to="/">Início</Link>
 
