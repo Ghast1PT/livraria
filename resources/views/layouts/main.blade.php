@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Livraria</title>
+    <title>@yield('title')</title>
+
 </head>
 
 <body>
-    @php
-        $texto = 'teste';
-        $encripted = encrypt_text($texto);
-    @endphp
+    <div id="root" @yield('props')>
 
-    <div id="root" data="{{ $encripted }}">
     </div>
 
 </body>
