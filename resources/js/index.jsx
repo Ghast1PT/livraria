@@ -4,10 +4,10 @@ import App from './App.jsx';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-var books = document.getElementById('root').getAttribute('books');
+var data = document.getElementById('root').getAttribute('data');
 
 root.render(
   <React.StrictMode>
-    <App books={books} />
+    <App data={data} />
   </React.StrictMode>
 );

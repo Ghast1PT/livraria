@@ -2,13 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Contact from './components/pages/Contact';
-import Livros from './components/pages/Livros';
+import Books from './components/pages/Books';
 import Home from './components/pages/Home';
 import Container from './components/layout/Container';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
-function App({ books }) {
+function App({ data }) {
     return (
         <Router>
             <Navbar />
@@ -16,7 +16,7 @@ function App({ books }) {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/livros" element={<Livros books={books} />} />
+                    <Route path="/livros" element={<Books data={data} />} />
                 </Routes>
             </Container>
             <Footer />

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use stdClass;
 
 class BookController extends Controller
 {
@@ -24,9 +25,15 @@ class BookController extends Controller
             $books = Book::all();
         }
 
+        $data = new stdClass();
+
+        $data->search = $search;
+        $data->books = $books;
+
+        $data = json_encode($data);
+
         return view('livros', [
-            'books' => json_encode($books),
-            'search' => $search,
+            'data' => $data,
         ]);
     }
 
