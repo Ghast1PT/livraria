@@ -11,5 +11,11 @@ Route::get('/contact', function () {
 });
 
 Route::get('/livros', function () {
-    return view('welcome');
+    return view('livros');
 });
+
+
+Route::get('/', [
+    BookController::class,
+    'index',
+]);
