@@ -8,8 +8,7 @@ import Container from './components/layout/Container';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 
-
-function App() {
+function App({ books }) {
     return (
         <Router>
             <Navbar />
@@ -17,7 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/livros" element={<Livros />} />
+                    <Route path="/livros" element={<Livros books={books} />} />
                 </Routes>
             </Container>
             <Footer />

@@ -13,20 +13,19 @@ class BookController extends Controller
         $search = request('search');
 
         if ($search) {
-            $events = Book::where([
+            $books = Book::where([
                 ['title', 'like', '%' . $search],
             ])
                 ->orWhere([
-                    ['city', 'like', '%' . $search],
+                    ['author', 'like', '%' . $search],
                 ])
                 ->get();
         } else {
-            $events = Book::all();
+            $books = Book::all();
         }
 
-
-        return view('welcome', [
-            'events' => $events,
+        return view('livros', [
+            'books' => json_encode($books),
             'search' => $search,
         ]);
     }

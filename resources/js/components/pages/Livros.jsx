@@ -1,8 +1,16 @@
 import React from 'react'
+import BookCard from '../book/BookCard'
 
-function Livros() {
+function Livros({ books }) {
+
+    const books2 = JSON.parse(books)
+
     return (
-        <div>Livros</div>
+        <>
+            {books2.map((book) => (
+                <BookCard book={book} />
+            ))}
+        </>
     )
 }
 

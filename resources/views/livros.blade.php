@@ -9,8 +9,10 @@
 </head>
 
 <body>
-    <div id="root">
-        
+    <div id="root" books="{{ $books }}">
+        @foreach (json_decode($books) as $book)
+            
+        @endforeach
     </div>
 
 </body>
