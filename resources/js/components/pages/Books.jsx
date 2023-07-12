@@ -21,7 +21,6 @@ function Books() {
                     const response = await axios.get('/livros');
                     setBooks(response.data.books);
                 }
-                
             } catch (error) {
                 console.error(error);
             }
