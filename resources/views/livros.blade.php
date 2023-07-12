@@ -11,10 +11,10 @@
 <body>
     @php
         $texto = 'teste';
-        $encripted = encrypt_text($texto);
+        $data = encrypt_text($data);
     @endphp
 
-    <div id="root" data="{{ $encripted }}">
+    <div id="root" data="{{ $data }}">
     </div>
 
 </body>
