@@ -14,10 +14,10 @@ function Books() {
                 const searchParam = urlParams.get('search');
                 setSearchValue(searchParam)
 
-                if(searchParam != undefined){
+                if (searchParam != undefined) {
                     const response = await axios.get('/livros?search=' + searchParam);
                     setBooks(response.data.books);
-                }else{
+                } else {
                     const response = await axios.get('/livros');
                     setBooks(response.data.books);
                 }
@@ -37,10 +37,12 @@ function Books() {
                 ) : (
                     <h1 className='text-4xl'>Livros</h1>
                 )}
+                <div id='books_cards' className='flex gap-4 mt-5' >
+                    {books.map((book) => (
+                        <BookCard book={book} key={book.id} className='col-span-1' />
+                    ))}
+                </div>
 
-                {books.map((book) => (
-                    <BookCard book={book} key={book.id} />
-                ))}
             </div>
 
         </>

@@ -8,8 +8,8 @@
 
 </head>
 
-<body>
-    <div id="root" @yield('props')>
+<body class="bg-slate-300">
+    <div id="root">
 
     </div>
 
