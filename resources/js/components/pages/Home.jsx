@@ -1,8 +1,9 @@
 import React from 'react'
+import Search_bar from '../Search_bar'
 
 function Home() {
   return (
-    <div className='bg-slate-500'>Casa</div>
+    <Search_bar/>
   )
 }
 

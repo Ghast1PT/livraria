@@ -6,7 +6,16 @@ module.exports = {
     "./resources/**/*.jsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'primary': "#93c5fd",
+        'secundary': "#000000",
+        'third': "#d33f49",
+      },
+      backgroundImage:{
+        'search': 'url("/public/img/search.jpg")',
+      },
+    },
   },
   plugins: [],
 }

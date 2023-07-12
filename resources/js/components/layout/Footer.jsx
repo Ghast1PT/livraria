@@ -5,13 +5,13 @@ import styles from './Footer.module.css'
 function Footer() {
     return (
 
-        <footer className={styles.footer}>
-            <ul className={styles.social_list}>
+        <footer className={styles.footer + ' bg-primary'}>
+            <ul className={styles.social_list + ' text-secundary'}>
                 <li><FaFacebook /></li>
                 <li><FaInstagram /></li>
                 <li><FaLinkedin /></li>
             </ul>
-            <p className={styles.copy_right}><span>Costs</span> &copy; 20223</p>
+            <p className='text-secundary mt-4'><span className='font-bold'>Costs</span> &copy; 20223</p>
         </footer>
 
     )
