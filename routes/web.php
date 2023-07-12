@@ -15,3 +15,8 @@ Route::get('/livros', [
     BookController::class,
     'index',
 ]);
+
+Route::get('/livro/{id}', [
+    BookController::class,
+    'show',
+]);

@@ -47,9 +47,17 @@ class BookController extends Controller
     }
 
 
-    public function show(string $id)
+    public function show(string $id, Request $request)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        if ($request->expectsJson()) {
+            return response()->json($book);
+        }
+
+        return view('livro', [
+            'book' => $book,
+        ]);
     }
 
 
