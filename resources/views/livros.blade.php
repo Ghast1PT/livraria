@@ -9,12 +9,9 @@
 </head>
 
 <body>
-    @php
-        $texto = 'teste';
-        $data = encrypt_text($data);
-    @endphp
+ 
 
-    <div id="root" data="{{ $data }}">
+    <div id="root" >
     </div>
 
 </body>

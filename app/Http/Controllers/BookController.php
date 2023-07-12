@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
-use stdClass;
 
 class BookController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
         $search = request('search');
 
@@ -25,18 +23,17 @@ class BookController extends Controller
             $books = Book::all();
         }
 
-        $data = new stdClass();
+        $data = [
+            'books' => $books,
+            'search' => $search,
+        ];
 
-        $data->search = $search;
-        $data->books = $books;
+        if ($request->expectsJson()) {
+            return response()->json($data);
+        }
 
-        $data = json_encode($data);
-
-        return view('livros', [
-            'data' => $data,
-        ]);
+        return view('livros');
     }
-
 
     public function create()
     {

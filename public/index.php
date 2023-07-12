@@ -52,12 +52,4 @@ $response = $kernel->handle(
     $request = Request::capture()
 )->send();
 
-function encrypt_text($data)
-{
-    $iv = random_bytes(16); 
-    $cipher = openssl_encrypt($data, 'AES-256-CBC', getenv('REACT_APP_ENCRYPTION_KEY'), OPENSSL_RAW_DATA, $iv);
-    $encryptedData = base64_encode($iv . $cipher);
-    return $encryptedData;
-}
-
 $kernel->terminate($request, $response);
